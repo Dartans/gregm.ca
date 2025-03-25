@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, doc, setDoc, serverTimestamp } from 'firebase/firestore';
+import './styles.css'; // Import the CSS file
 
 // Replace with your actual Firebase configuration
 const firebaseConfig = {
@@ -17,7 +18,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const ticketsCollection = collection(db, 'tickets');
 
-function App() {
+function TicketSubmissionForm() {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [message, setMessage] = useState('');
@@ -50,112 +51,164 @@ function App() {
   };
 
   return (
-    <div style={styles.container}>
-      <h1>Submit a Ticket</h1>
+    <form onSubmit={handleSubmit} className="ticket-form">
       {submissionStatus === 'success' && (
-        <p style={styles.successMessage}>Ticket submitted successfully!</p>
+        <p className="success-message">Ticket submitted successfully!</p>
       )}
       {submissionStatus === 'error' && (
-        <p style={styles.errorMessage}>Failed to submit ticket. Please try again.</p>
+        <p className="error-message">Failed to submit ticket. Please try again.</p>
       )}
       {submissionStatus === 'submitting' && (
         <p>Submitting...</p>
       )}
-      <form onSubmit={handleSubmit} style={styles.form}>
-        <div style={styles.formGroup}>
-          <label htmlFor="email" style={styles.label}>Email:</label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            style={styles.input}
-          />
-        </div>
-        <div style={styles.formGroup}>
-          <label htmlFor="name" style={styles.label}>Name:</label>
-          <input
-            type="text"
-            id="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-            style={styles.input}
-          />
-        </div>
-        <div style={styles.formGroup}>
-          <label htmlFor="message" style={styles.label}>Message:</label>
-          <textarea
-            id="message"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            required
-            style={styles.textarea}
-          />
-        </div>
-        <button type="submit" style={styles.button}>Submit Ticket</button>
-      </form>
-    </div>
+      <div className="form-group">
+        <label htmlFor="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="message">Message:</label>
+        <textarea
+          id="message"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          required
+        />
+      </div>
+      <button type="submit">Submit Ticket</button>
+    </form>
   );
 }
 
-const styles = {
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    padding: '20px',
-    fontFamily: 'Arial, sans-serif',
-  },
-  form: {
-    width: '80%',
-    maxWidth: '500px',
-    padding: '20px',
-    border: '1px solid #ccc',
-    borderRadius: '5px',
-    marginTop: '20px',
-  },
-  formGroup: {
-    marginBottom: '15px',
-  },
-  label: {
-    display: 'block',
-    marginBottom: '5px',
-    fontWeight: 'bold',
-  },
-  input: {
-    width: '100%',
-    padding: '10px',
-    border: '1px solid #ddd',
-    borderRadius: '3px',
-    boxSizing: 'border-box',
-  },
-  textarea: {
-    width: '100%',
-    padding: '10px',
-    border: '1px solid #ddd',
-    borderRadius: '3px',
-    boxSizing: 'border-box',
-    minHeight: '100px',
-  },
-  button: {
-    backgroundColor: '#007bff',
-    color: 'white',
-    padding: '10px 15px',
-    border: 'none',
-    borderRadius: '3px',
-    cursor: 'pointer',
-    fontSize: '16px',
-  },
-  successMessage: {
-    color: 'green',
-    marginTop: '10px',
-  },
-  errorMessage: {
-    color: 'red',
-    marginTop: '10px',
-  },
-};
+function App() {
+  return (
+    <div className="container">
+      {/* Header */}
+      <header>
+        <div className="logo">
+          GM<span className="logo-accent">Tech</span>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      {/* Hero Section */}
+      <section id="hero" className="hero">
+        <div className="hero-content">
+          <h1>
+            Greg Mueller: Your Partner in IT Solutions
+          </h1>
+          <p>
+            Providing expert support in networking, cloud infrastructure, web development, and IT management to optimize your technology and drive business growth.
+          </p>
+          <a href="#services" className="cta-button">
+            Explore My Services
+          </a>
+        </div>
+      </section>
+
+      {/* About Me Section */}
+      <section id="about" className="about">
+        <h2>About Greg Mueller</h2>
+        <div className="about-content">
+          <div className="about-text">
+            <p>
+              I'm an experienced IT professional dedicated to delivering effective solutions for businesses of all sizes. My expertise spans network infrastructure, cloud systems, web development, and IT support. I'm passionate about using technology to solve complex problems and drive your success.
+            </p>
+            <p>
+              With strong communication and problem-solving skills developed through years of hands-on experience, I'm committed to providing exceptional service and building lasting partnerships with my clients.
+            </p>
+          </div>
+          <div className="skills-highlight">
+            <h3>Key Skills</h3>
+            <ul>
+              <li>Network Architecture & Security</li>
+              <li>Cloud Solutions (Azure)</li>
+              <li>Web Development & Hosting</li>
+              <li>System Administration & Automation</li>
+              <li>Database Management (SQL)</li>
+              <li>IT Strategy & Consulting</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="services" className="services">
+        <h2>Services</h2>
+        <div className="service-grid">
+          <div className="service-card">
+            <i className="fas fa-network-wired service-icon"></i>
+            <h3>Network & Infrastructure</h3>
+            <p>
+              Design, implementation, and maintenance of LANs/WANs, server setup, network security, and troubleshooting.
+            </p>
+          </div>
+          <div className="service-card">
+            <i className="fas fa-cloud service-icon"></i>
+            <h3>Cloud Solutions</h3>
+            <p>
+              Azure deployment and management, cloud security, and VDI solutions for modern workplaces.
+            </p>
+          </div>
+          <div className="service-card">
+            <i className="fas fa-code service-icon"></i>
+            <h3>Web Development</h3>
+            <p>
+              Custom website development, hosting solutions, and web application consulting for your online presence.
+            </p>
+          </div>
+          <div className="service-card">
+            <i className="fas fa-tools service-icon"></i>
+            <h3>IT Consulting</h3>
+            <p>
+              Strategic IT planning, system optimization, software implementation, and process automation.
+            </p>
+          </div>
+          <div className="service-card">
+            <i className="fas fa-database service-icon"></i>
+            <h3>Database Administration</h3>
+            <p>
+              Database support (SQL), backup and recovery, and data management solutions.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="contact">
+        <h2>Get in Touch</h2>
+        <TicketSubmissionForm />
+      </section>
+
+      {/* Footer */}
+      <footer>
+        <p>&copy; {new Date().getFullYear()} Greg Mueller Consulting</p>
+        {/* Add links to privacy policy, etc., if needed */}
+      </footer>
+    </div>
+  );
+}
 
 export default App;
