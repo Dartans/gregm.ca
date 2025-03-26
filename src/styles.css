@@ -1,308 +1,324 @@
 /* Global Styles */
 body {
-    font-family: 'Roboto', sans-serif; /* Modern font */
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    color: #f8f9fa;
-    background-color: #212529;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  /* Header */
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0; /* Increased padding */
-    border-bottom: 1px solid #495057;
-  }
-  
-  .logo {
-    font-size: 2em; /* Larger logo */
-    font-weight: bold;
-    color: #fff;
-  }
-  
-  .logo-accent {
-    color: #007bff; /* Accent color for "Tech" */
-  }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-  }
-  
-  nav ul li {
-    margin-left: 30px; /* Increased spacing */
-  }
-  
-  nav ul li a {
-    text-decoration: none;
-    color: #adb5bd;
-    font-weight: 500; /* Slightly bolder */
-    transition: color 0.3s ease; /* Smooth transition */
-  }
-  
-  nav ul li a:hover {
-    color: #007bff;
-  }
-  
-  /* Hero Section */
-  .hero {
-    background-color: #343a40;
-    padding: 120px 0; /* Increased padding */
-    text-align: center;
-  }
-  
-  .hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .hero h1 {
-    font-size: 3em; /* Larger heading */
-    margin-bottom: 30px;
-    color: #fff;
-    font-weight: 600; /* Bolder heading */
-  }
-  
-  .hero p {
-    font-size: 1.2em;
-    margin-bottom: 40px;
-    color: #adb5bd;
-  }
-  
-  .cta-button {
-    background-color: #007bff;
-    color: white;
-    padding: 14px 30px; /* Larger button */
-    text-decoration: none;
-    border-radius: 8px; /* More rounded */
-    font-weight: bold;
-    font-size: 1.1em; /* Larger font */
-    transition: background-color 0.3s ease;
-  }
-  
-  .cta-button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* About Me Section */
-  .about {
-    padding: 100px 0; /* Increased padding */
-    border-bottom: 1px solid #495057;
-  }
-  
-  .about h2 {
-    font-size: 2.5em; /* Larger heading */
-    margin-bottom: 40px;
-    text-align: center;
-    color: #fff;
-    font-weight: 600; /* Bolder heading */
-  }
-  
-  .about-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-  
-  .about-text {
-    flex: 2;
-    margin-right: 50px; /* Increased spacing */
-    color: #adb5bd;
-    font-size: 1.1em; /* Larger font */
-  }
-  
-  .about-text p {
-    margin-bottom: 20px;
-  }
-  
-  .skills-highlight {
-    flex: 1;
-    background-color: #343a40;
-    padding: 30px; /* Increased padding */
-    border-radius: 10px; /* More rounded */
-  }
-  
-  .skills-highlight h3 {
-    font-size: 1.5em; /* Larger heading */
-    margin-bottom: 20px;
-    color: #fff;
-    font-weight: 600; /* Bolder heading */
-  }
-  
-  .skills-highlight ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .skills-highlight ul li {
-    margin-bottom: 10px;
-    color: #adb5bd;
-    font-size: 1.1em; /* Larger font */
-    position: relative;
-    padding-left: 25px; /* Space for icon */
-  }
-  
-  .skills-highlight ul li:before {
-    content: '\2022'; /* Bullet point */
-    color: #007bff;
-    position: absolute;
-    left: 0;
-    top: 5px;
-  }
-  
-  /* Services Section */
-  .services {
-    padding: 100px 0; /* Increased padding */
-    background-color: #212529;
-    border-bottom: 1px solid #495057;
-  }
-  
-  .services h2 {
-    font-size: 2.5em; /* Larger heading */
-    margin-bottom: 50px;
-    text-align: center;
-    color: #fff;
-    font-weight: 600; /* Bolder heading */
-  }
-  
-  .service-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Wider cards */
-    grid-gap: 40px; /* Increased gap */
-  }
-  
-  .service-card {
-    background-color: #343a40;
-    padding: 30px; /* Increased padding */
-    border-radius: 10px; /* More rounded */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
-  }
-  
-  .service-card:hover {
-    transform: translateY(-5px); /* Slight lift on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
-  }
-  
-  .service-card i {
-    font-size: 3em; /* Larger icons */
-    color: #007bff;
-    margin-bottom: 20px;
-  }
-  
-  .service-card h3 {
-    font-size: 1.8em; /* Larger heading */
-    margin-bottom: 15px;
-    color: #fff;
-    font-weight: 500;
-  }
-  
-  .service-card p {
-    color: #adb5bd;
-    font-size: 1.1em; /* Larger font */
-  }
-  
-  /* Font Awesome Icons */
-  /* Include Font Awesome in your project:
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="...integrity hash..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-  */
-  
-  .service-icon {
-    /* See CSS above */
-  }
-  
-  /* Contact Section */
-  .contact {
-    padding: 100px 0; /* Increased padding */
-  }
-  
-  .contact h2 {
-    font-size: 2.5em; /* Larger heading */
-    margin-bottom: 50px;
-    text-align: center;
-    color: #fff;
-    font-weight: 600; /* Bolder heading */
-  }
-  
-  /* Ticket Submission Form */
-  .ticket-form {
-    width: 80%;
-    max-width: 600px; /* Wider form */
-    margin: 0 auto;
-    padding: 40px; /* Increased padding */
-    border: 1px solid #495057;
-    border-radius: 10px; /* More rounded */
-    background-color: #343a40; /* Darker form background */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow */
-  }
-  
-  .form-group {
-    margin-bottom: 20px; /* Increased spacing */
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #fff;
-    font-size: 1.1em; /* Larger font */
-  }
-  
-  .form-group input,
-  .form-group textarea {
-    width: 100%;
-    padding: 14px; /* Larger input */
-    border: none;
-    border-radius: 8px; /* More rounded */
-    box-sizing: border-box;
-    background-color: #212529;
-    color: #adb5bd;
-    font-size: 1em; /* Larger font */
-  }
-  
-  .form-group textarea {
-    min-height: 150px; /* Larger textarea */
-  }
-  
-  .ticket-form button {
-    background-color: #007bff;
-    color: white;
-    padding: 14px 30px; /* Larger button */
-    border: none;
-    border-radius: 8px; /* More rounded */
-    cursor: pointer;
-    font-size: 1.1em; /* Larger font */
-    transition: background-color 0.3s ease;
-  }
-  
-  .ticket-form button:hover {
-    background-color: #0056b3;
-  }
-  
-  .success-message {
-    color: green;
-    margin-top: 15px;
-  }
-  
-  .error-message {
-    color: red;
-    margin-top: 15px;
-  }
-  
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 40px 0; /* Increased padding */
-    background-color: #212529;
-    color: #adb5bd;
-    font-size: 1.1em; /* Larger font */
-  }
+  font-family: 'Roboto', sans-serif; /* Modern font */
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: #f8f9fa;
+  background-color: #212529;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0; /* Increased padding */
+  border-bottom: 1px solid #495057;
+}
+
+.logo {
+  font-size: 2em; /* Larger logo */
+  font-weight: bold;
+  color: #fff;
+}
+
+.logo-accent {
+  color: #007bff; /* Accent color for "Tech" */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 30px; /* Increased spacing */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #adb5bd;
+  font-weight: 500; /* Slightly bolder */
+  transition: color 0.3s ease; /* Smooth transition */
+}
+
+nav ul li a:hover {
+  color: #007bff;
+}
+
+/* Hero Section */
+.hero {
+  background-color: #343a40;
+  padding: 120px 0; /* Increased padding */
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 3em; /* Larger heading */
+  margin-bottom: 30px;
+  color: #fff;
+  font-weight: 600; /* Bolder heading */
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 40px;
+  color: #adb5bd;
+}
+
+.cta-button {
+  background-color: #007bff;
+  color: white;
+  padding: 14px 30px; /* Larger button */
+  text-decoration: none;
+  border-radius: 8px; /* More rounded */
+  font-weight: bold;
+  font-size: 1.1em; /* Larger font */
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
+}
+
+/* Hero Section - SEO */
+.hero-title {
+  font-size: 3em;
+  margin-bottom: 30px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.hero-description {
+  font-size: 1.2em;
+  margin-bottom: 40px;
+  color: #adb5bd;
+}
+
+/* About Me Section */
+.about {
+  padding: 100px 0; /* Increased padding */
+  border-bottom: 1px solid #495057;
+}
+
+.about h2 {
+  font-size: 2.5em; /* Larger heading */
+  margin-bottom: 40px;
+  text-align: center;
+  color: #fff;
+  font-weight: 600; /* Bolder heading */
+}
+
+.about-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.about-text {
+  flex: 2;
+  margin-right: 50px; /* Increased spacing */
+  color: #adb5bd;
+  font-size: 1.1em; /* Larger font */
+}
+
+.about-text p {
+  margin-bottom: 20px;
+}
+
+.skills-highlight {
+  flex: 1;
+  background-color: #343a40;
+  padding: 30px; /* Increased padding */
+  border-radius: 10px; /* More rounded */
+}
+
+.skills-highlight h3 {
+  font-size: 1.5em; /* Larger heading */
+  margin-bottom: 20px;
+  color: #fff;
+  font-weight: 600; /* Bolder heading */
+}
+
+.skills-highlight ul {
+  list-style: none;
+  padding: 0;
+}
+
+.skills-highlight ul li {
+  margin-bottom: 10px;
+  color: #adb5bd;
+  font-size: 1.1em; /* Larger font */
+  position: relative;
+  padding-left: 25px; /* Space for icon */
+}
+
+.skills-highlight ul li:before {
+  content: '\2022'; /* Bullet point */
+  color: #007bff;
+  position: absolute;
+  left: 0;
+  top: 5px;
+}
+
+/* Services Section */
+.services {
+  padding: 100px 0; /* Increased padding */
+  background-color: #212529;
+  border-bottom: 1px solid #495057;
+}
+
+.services h2 {
+  font-size: 2.5em; /* Larger heading */
+  margin-bottom: 50px;
+  text-align: center;
+  color: #fff;
+  font-weight: 600; /* Bolder heading */
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Wider cards */
+  grid-gap: 40px; /* Increased gap */
+}
+
+.service-card {
+  background-color: #343a40;
+  padding: 30px; /* Increased padding */
+  border-radius: 10px; /* More rounded */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.service-card:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+}
+
+.service-card i {
+  font-size: 3em; /* Larger icons */
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+  font-size: 1.8em; /* Larger heading */
+  margin-bottom: 15px;
+  color: #fff;
+  font-weight: 500;
+}
+
+.service-card p {
+  color: #adb5bd;
+  font-size: 1.1em; /* Larger font */
+}
+
+/* Font Awesome Icons */
+/* Include Font Awesome in your project:
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="...integrity hash..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+*/
+
+
+/* Contact Section */
+.contact {
+  padding: 100px 0; /* Increased padding */
+}
+
+.contact h2 {
+  font-size: 2.5em; /* Larger heading */
+  margin-bottom: 50px;
+  text-align: center;
+  color: #fff;
+  font-weight: 600; /* Bolder heading */
+}
+
+/* Ticket Submission Form */
+.ticket-form {
+  width: 80%;
+  max-width: 600px; /* Wider form */
+  margin: 0 auto;
+  padding: 40px; /* Increased padding */
+  border: 1px solid #495057;
+  border-radius: 10px; /* More rounded */
+  background-color: #343a40; /* Darker form background */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+}
+
+.form-group {
+  margin-bottom: 20px; /* Increased spacing */
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #fff;
+  font-size: 1.1em; /* Larger font */
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px; /* Larger input */
+  border: none;
+  border-radius: 8px; /* More rounded */
+  box-sizing: border-box;
+  background-color: #212529;
+  color: #adb5bd;
+  font-size: 1em; /* Larger font */
+}
+
+.form-group textarea {
+  min-height: 150px; /* Larger textarea */
+}
+
+.ticket-form button {
+  background-color: #007bff;
+  color: white;
+  padding: 14px 30px; /* Larger button */
+  border: none;
+  border-radius: 8px; /* More rounded */
+  cursor: pointer;
+  font-size: 1.1em; /* Larger font */
+  transition: background-color 0.3s ease;
+}
+
+.ticket-form button:hover {
+  background-color: #0056b3;
+}
+
+.success-message {
+  color: green;
+  margin-top: 15px;
+}
+
+.error-message {
+  color: red;
+  margin-top: 15px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 40px 0; /* Increased padding */
+  background-color: #212529;
+  color: #adb5bd;
+  font-size: 1.1em; /* Larger font */
+}
+
+/* SEO - Hidden Elements */
+.long-tail-keywords {
+  display: none; /* Hide keywords visually */
+}

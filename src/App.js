@@ -53,10 +53,10 @@ function TicketSubmissionForm() {
   return (
     <form onSubmit={handleSubmit} className="ticket-form">
       {submissionStatus === 'success' && (
-        <p className="success-message">Ticket submitted successfully!</p>
+        <p className="success-message">Ticket submitted successfully! I will reach out to you within 24 Hours at the email address provided.</p>
       )}
       {submissionStatus === 'error' && (
-        <p className="error-message">Failed to submit ticket. Please try again.</p>
+        <p className="error-message">You have already submitted a ticket. Please call or Txt +1-289-479-0468 for emergency assistance. Emergency rates of $150/h may apply</p>
       )}
       {submissionStatus === 'submitting' && (
         <p>Submitting...</p>
@@ -116,10 +116,10 @@ function App() {
       {/* Hero Section */}
       <section id="hero" className="hero">
         <div className="hero-content">
-          <h1>
+          <h1 className="hero-title">
             Greg Mueller: Your Partner in IT Solutions
           </h1>
-          <p>
+          <p className="hero-description">
             Providing expert support in networking, cloud infrastructure, web development, and IT management to optimize your technology and drive business growth.
           </p>
           <a href="#services" className="cta-button">
@@ -164,12 +164,18 @@ function App() {
             <p>
               Design, implementation, and maintenance of LANs/WANs, server setup, network security, and troubleshooting.
             </p>
+            <p className="long-tail-keywords">
+              Keywords: cabling, datacentre networks, web servers, network traffic, security, disaster recovery, network connectivity, performance.
+            </p>
           </div>
           <div className="service-card">
             <i className="fas fa-cloud service-icon"></i>
             <h3>Cloud Solutions</h3>
             <p>
               Azure deployment and management, cloud security, and VDI solutions for modern workplaces.
+            </p>
+            <p className="long-tail-keywords">
+              Keywords: Azure, Cloud security, VDI PCoIP, cloud migration.
             </p>
           </div>
           <div className="service-card">
@@ -178,6 +184,9 @@ function App() {
             <p>
               Custom website development, hosting solutions, and web application consulting for your online presence.
             </p>
+            <p className="long-tail-keywords">
+              Keywords: website development, web hosting, app development, e-commerce, online portals.
+            </p>
           </div>
           <div className="service-card">
             <i className="fas fa-tools service-icon"></i>
@@ -185,12 +194,18 @@ function App() {
             <p>
               Strategic IT planning, system optimization, software implementation, and process automation.
             </p>
+            <p className="long-tail-keywords">
+              Keywords: IT strategy, system analysis, process automation, software implementation, technical consultation.
+            </p>
           </div>
           <div className="service-card">
             <i className="fas fa-database service-icon"></i>
             <h3>Database Administration</h3>
             <p>
               Database support (SQL), backup and recovery, and data management solutions.
+            </p>
+            <p className="long-tail-keywords">
+              Keywords: SQL, MSSQL EXPRESS, FOXCOM, database management, backup, disaster recovery.
             </p>
           </div>
         </div>
