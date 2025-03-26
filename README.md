@@ -90,6 +90,3 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 - [Deployment](https://facebook.github.io/create-react-app/docs/deployment)
 - [Troubleshooting](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
----
-
-You can replace the placeholder `Greg's` with the actual name or content relevant to the project owner. This should provide a clearer and more detailed overview of the project.
