@@ -1,6 +1,4 @@
-Sure, I'll start by fetching the current content of the README.md file to understand its current state. Then, I'll help you improve it.Here's an improved README for the project to better reflect its purpose and usage:
 
----
 
 # GregM.ca
 
