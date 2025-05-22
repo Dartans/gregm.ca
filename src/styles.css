@@ -322,3 +322,277 @@ footer {
 .long-tail-keywords {
   display: none; /* Hide keywords visually */
 }
+
+/* -------------------- Mobile Responsive Styles -------------------- */
+/* Styles for screens up to 768px wide (typical tablet portrait and mobile landscape/portrait) */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 15px; /* Reduced horizontal padding for the main container */
+  }
+
+  /* Header */
+  header {
+    flex-direction: column; /* Stack logo and nav vertically */
+    align-items: center;    /* Center items when stacked */
+    padding: 15px 0;      /* Adjust padding */
+  }
+
+  .logo {
+    margin-bottom: 15px;  /* Space between logo and nav */
+    font-size: 1.8em;     /* Slightly smaller logo */
+  }
+
+  nav ul {
+    flex-direction: column; /* Stack nav items vertically */
+    align-items: center;    /* Center nav items */
+    width: 100%;            /* Nav takes full width */
+    padding-left: 0;        /* Remove default ul padding */
+  }
+
+  nav ul li {
+    margin-left: 0;         /* Remove side margin */
+    margin-bottom: 12px;    /* Space between vertical nav items */
+    width: 100%;            /* List items take full width */
+    text-align: center;     /* Center nav text */
+  }
+  
+  nav ul li:last-child {
+    margin-bottom: 0;     /* No margin for the last item */
+  }
+
+  nav ul li a {
+    display: block;         /* Make links fill the li for easier tapping */
+    padding: 8px 0;         /* Add some vertical padding to tap area */
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: 60px 0;      /* Reduced top/bottom padding */
+  }
+
+  .hero-content {
+    padding: 0 15px;      /* Ensure content padding within hero */
+  }
+
+  .hero h1, .hero-title { /* Target both possible classes for hero title */
+    font-size: 2em;       /* Reduced font size for hero title */
+    margin-bottom: 20px;
+  }
+
+  .hero p, .hero-description { /* Target both possible classes for hero description */
+    font-size: 1em;       /* Reduced font size for hero paragraph */
+    margin-bottom: 30px;
+  }
+
+  .hero-cta-buttons {
+    flex-direction: column; /* Stack CTA buttons vertically */
+    align-items: center;    /* Center buttons */
+    gap: 15px;              /* Space between stacked buttons */
+  }
+
+  .cta-button { /* General CTA button adjustments for mobile */
+    width: 80%;             /* Make buttons wider for easier tapping */
+    max-width: 300px;       /* Max width to prevent excessive wideness */
+    padding: 12px 20px;   /* Adjust padding */
+    font-size: 1em;         /* Adjust font size */
+  }
+  
+  /* About Me & Marketing Insights Sections (as #marketing-insights uses .about classes) */
+  .about { /* This class is used by both "About Me" and "Marketing Insights" sections */
+    padding: 60px 0;      /* Reduced top/bottom padding */
+  }
+
+  .about h2 {
+    font-size: 2em;       /* Reduced font size for section titles */
+    margin-bottom: 30px;
+  }
+
+  .about-content {
+    flex-direction: column; /* Stack content vertically */
+    align-items: center;    /* Center items when stacked */
+    padding: 0 15px;      /* Content padding */
+  }
+
+  .about-text { /* Applies to text block in "About Me" and "Marketing Insights" */
+    margin-right: 0;        /* Remove side margin */
+    margin-bottom: 30px;    /* Space below text when content stacks */
+    font-size: 1em;         /* Adjust font size */
+    text-align: center;     /* Center align text for intro/general paragraphs */
+  }
+  
+  .about-text p, .about-text ul { /* Keep paragraphs and lists left-aligned for readability */
+      text-align: left; 
+  }
+  
+  .about-text h3 { /* Subheadings within .about-text (e.g., Marketing Insights) */
+    font-size: 1.3em;     /* Adjust subheading font size */
+    margin-top: 20px;     /* Space above subheadings */
+  }
+
+  .skills-highlight { /* Specific to "About Me" skills section */
+    width: 100%;            /* Take full width */
+    max-width: 400px;       /* Optional: constrain width for aesthetics */
+    padding: 20px;          /* Adjust padding */
+    margin-top: 0;          /* Remove top margin if it was there */
+  }
+
+  .skills-highlight h3 {
+    font-size: 1.3em;     /* Adjust font size */
+  }
+
+  .skills-highlight ul li {
+    font-size: 1em;         /* Adjust font size */
+    padding-left: 20px;     /* Adjust padding for bullet point */
+  }
+  .skills-highlight ul li:before {
+    top: 2px;               /* Fine-tune bullet position if needed */
+  }
+
+  /* Services Section - Adapting for .service-packages and .service-package-card */
+  .services {
+    padding: 60px 0;      /* Reduced top/bottom padding */
+  }
+
+  .services h2 { /* Main section title */
+    font-size: 2em;       /* Reduced font size */
+    margin-bottom: 15px;  /* Adjust margin */
+  }
+  
+  .services-intro { /* Introductory paragraph in Services section */
+    font-size: 1em;         /* Adjust font size */
+    margin-bottom: 30px;
+    padding: 0 15px;      /* Content padding */
+  }
+
+  /* Styles for the new package structure */
+  .service-packages {
+    grid-template-columns: 1fr; /* Stack package cards in a single column */
+    grid-gap: 20px;         /* Adjust gap between cards */
+    padding: 0 15px;      /* Content padding */
+  }
+
+  .service-package-card {
+    padding: 20px;          /* Adjust padding within cards */
+  }
+  
+  .service-package-card .service-icon {
+      font-size: 2.2em;     /* Adjust icon size */
+      margin-bottom: 15px;
+  }
+
+  .service-package-card h3 { /* Package title */
+    font-size: 1.4em;     /* Adjust font size */
+  }
+
+  .service-package-card .package-description {
+    font-size: 0.95em;    /* Adjust font size */
+    margin-bottom: 15px;
+  }
+  
+  .service-package-card h4 { /* "Key Deliverables" / "Core Benefits" */
+    font-size: 1.1em;     /* Adjust font size */
+    margin-top: 15px;
+    margin-bottom: 8px;
+  }
+  
+  .service-package-card ul { /* Lists within packages */
+    font-size: 0.9em;       /* Adjust font size */
+    padding-left: 25px;     /* Ensure bullets are visible */
+  }
+  
+  .service-package-card ul li {
+    margin-bottom: 6px;
+  }
+
+  /* Fallback for old .service-grid and .service-card if they exist or are reused */
+  .service-grid {
+    grid-template-columns: 1fr; /* Stack cards in a single column */
+    grid-gap: 20px;
+    padding: 0 15px;
+  }
+
+  .service-card {
+    padding: 20px;
+  }
+
+  .service-card i {
+    font-size: 2.5em; /* Adjust icon size */
+  }
+
+  .service-card h3 {
+    font-size: 1.5em; /* Adjust heading size */
+  }
+
+  .service-card p {
+    font-size: 1em; /* Adjust paragraph size */
+  }
+
+
+  .cta-consultation { /* CTA at the end of services section */
+    margin-top: 40px;
+    padding: 0 15px;      /* Content padding */
+  }
+
+  .cta-consultation h3 {
+    font-size: 1.5em;     /* Adjust font size */
+    margin-bottom: 10px;
+  }
+  
+  .cta-consultation p {
+    font-size: 1em;         /* Adjust font size */
+    margin-bottom: 20px;
+  }
+
+  /* Contact Section */
+  .contact {
+    padding: 60px 0;      /* Reduced top/bottom padding */
+  }
+
+  .contact h2 {
+    font-size: 2em;       /* Reduced font size */
+    margin-bottom: 20px;
+  }
+  
+  .contact-intro { /* Text above contact form/CTA */
+    font-size: 1em;         /* Adjust font size */
+    padding: 0 15px;      /* Content padding */
+    margin-bottom: 25px;    /* Space before button or form */
+  }
+  
+  .cta-button-centered { /* For "Book Consultation" button in Contact section */
+    /* General .cta-button mobile styles already apply for width/max-width */
+    margin-bottom: 25px;    /* Ensure space before form if it's directly above */
+  }
+
+  .ticket-form {
+    width: 90%;             /* Make form take more width on small screens */
+    padding: 25px;          /* Adjust padding */
+  }
+
+  .form-group label {
+    font-size: 1em;         /* Adjust font size */
+    margin-bottom: 8px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 12px;          /* Adjust padding */
+    font-size: 0.95em;    /* Adjust font size */
+  }
+
+  .form-group textarea {
+    min-height: 120px;      /* Adjust min height */
+  }
+
+  .ticket-form button {
+    padding: 12px 25px;   /* Adjust padding */
+    font-size: 1em;         /* Adjust font size */
+    width: 100%;            /* Make button full width for easier tapping */
+  }
+  
+  /* Footer */
+  footer {
+    padding: 30px 0;      /* Reduced top/bottom padding */
+    font-size: 0.9em;       /* Adjust font size */
+  }
+}
