@@ -108,6 +108,7 @@ function App() {
             <li><a href="#hero">Home</a></li>
             <li><a href="#about">About Me</a></li>
             <li><a href="#services">Services</a></li>
+            <li><a href="#marketing-insights">Marketing Insights</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
@@ -117,14 +118,20 @@ function App() {
       <section id="hero" className="hero">
         <div className="hero-content">
           <h1 className="hero-title">
-            Greg Mueller: Your Partner in IT Solutions
+            Unlock Peak Performance: Your IT Partner for Growth & Efficiency
           </h1>
           <p className="hero-description">
-            Providing expert support in networking, cloud infrastructure, web development, and IT management to optimize your technology and drive business growth.
+            Achieve cost savings, increased efficiency, and scalable solutions with expert IT support in networking, cloud infrastructure, web development, and strategic IT management. Let's optimize your technology for lasting business success and peace of mind.
           </p>
-          <a href="#services" className="cta-button">
-            Explore My Services
-          </a>
+          <div className="hero-cta-buttons">
+            <a href="#services" className="cta-button">
+              Explore My Services
+            </a>
+            {/* Greg: Replace # with your booking service URL */}
+            <a href="#contact" className="cta-button cta-button-secondary">
+              Book Your Free 15-Min Consultation
+            </a>
+          </div>
         </div>
       </section>
 
@@ -154,58 +161,121 @@ function App() {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Services Section - Restructured */}
       <section id="services" className="services">
-        <h2>Services</h2>
-        <div className="service-grid">
-          <div className="service-card">
-            <i className="fas fa-network-wired service-icon"></i>
-            <h3>Network & Infrastructure</h3>
-            <p>
-              Design, implementation, and maintenance of LANs/WANs, server setup, network security, and troubleshooting.
+        <h2>Transform Your Business with Our Tailored IT Packages</h2>
+        <p className="services-intro">
+          From foundational support to comprehensive modernization, we offer tiered packages designed to meet your specific business needs, ensuring cost savings, increased efficiency, and scalable growth.
+        </p>
+
+        <div className="service-packages">
+          {/* Package 1: Essential IT Support & Security */}
+          <div className="service-package-card">
+            <i className="fas fa-shield-alt service-icon"></i>
+            <h3>Essential IT Support & Security</h3>
+            <p className="package-description">
+              Solidify your IT foundation with reliable network management, proactive security measures, and robust data protection for uninterrupted core operations and peace of mind.
             </p>
-            <p className="long-tail-keywords">
-              Keywords: cabling, datacentre networks, web servers, network traffic, security, disaster recovery, network connectivity, performance.
-            </p>
+            <h4>Key Deliverables:</h4>
+            <ul>
+              <li>Network health monitoring & optimization</li>
+              <li>Security patching & threat management</li>
+              <li>Regular data backups & recovery plans</li>
+              <li>LAN/WAN design, setup, and support</li>
+              <li>Secure SQL database administration</li>
+            </ul>
+            <h4>Core Benefits:</h4>
+            <ul>
+              <li><strong>Stable & Secure Operations:</strong> Minimize downtime and protect against threats.</li>
+              <li><strong>Data Integrity:</strong> Ensure your critical information is safe and accessible.</li>
+              <li><strong>Peace of Mind:</strong> Focus on your business, knowing your IT is handled.</li>
+            </ul>
           </div>
-          <div className="service-card">
-            <i className="fas fa-cloud service-icon"></i>
-            <h3>Cloud Solutions</h3>
-            <p>
-              Azure deployment and management, cloud security, and VDI solutions for modern workplaces.
+
+          {/* Package 2: Business Growth & Optimization Package */}
+          <div className="service-package-card">
+            <i className="fas fa-chart-line service-icon"></i>
+            <h3>Business Growth & Optimization</h3>
+            <p className="package-description">
+              Elevate your business with scalable cloud solutions, engaging web presence, and strategic IT consulting aimed at boosting efficiency and driving growth.
             </p>
-            <p className="long-tail-keywords">
-              Keywords: Azure, Cloud security, VDI PCoIP, cloud migration.
-            </p>
+            <h4>Key Deliverables:</h4>
+            <ul>
+              <li>Azure cloud migration, deployment & management</li>
+              <li>Custom website & web application development</li>
+              <li>VDI (Virtual Desktop Infrastructure) solutions</li>
+              <li>Process automation consulting & implementation</li>
+              <li>IT system optimization for performance</li>
+            </ul>
+            <h4>Core Benefits:</h4>
+            <ul>
+              <li><strong>Increased Efficiency:</strong> Streamline operations with cloud and automation.</li>
+              <li><strong>Scalable Solutions:</strong> Adapt your IT to your business growth trajectory.</li>
+              <li><strong>Enhanced Online Presence:</strong> Drive customer engagement and market reach.</li>
+              <li><strong>Cost Savings:</strong> Optimize resource utilization and reduce operational overhead.</li>
+            </ul>
           </div>
-          <div className="service-card">
-            <i className="fas fa-code service-icon"></i>
-            <h3>Web Development</h3>
-            <p>
-              Custom website development, hosting solutions, and web application consulting for your online presence.
+
+          {/* Package 3: Comprehensive Modernization & Strategy */}
+          <div className="service-package-card">
+            <i className="fas fa-cogs service-icon"></i>
+            <h3>Comprehensive Modernization & Strategy</h3>
+            <p className="package-description">
+              Achieve peak performance with a complete IT overhaul. This all-inclusive package offers strategic planning, advanced technology solutions, and dedicated partnership for transformative results.
             </p>
-            <p className="long-tail-keywords">
-              Keywords: website development, web hosting, app development, e-commerce, online portals.
-            </p>
+            <h4>Key Deliverables:</h4>
+            <ul>
+              <li>Full IT infrastructure strategy development</li>
+              <li>Advanced Azure cloud architecture & security</li>
+              <li>Custom enterprise application development</li>
+              <li>Comprehensive security audits & compliance</li>
+              <li>Ongoing IT management, support, and strategic consulting</li>
+            </ul>
+            <h4>Core Benefits:</h4>
+            <ul>
+              <li><strong>Peak Operational Performance:</strong> Maximize efficiency across all systems.</li>
+              <li><strong>Strategic Cost Savings:</strong> Long-term financial benefits from optimized IT.</li>
+              <li><strong>Future-Proof Infrastructure:</strong> Stay ahead with cutting-edge technology.</li>
+              <li><strong>Dedicated IT Partnership:</strong> Expert guidance for sustained success and peace of mind.</li>
+            </ul>
           </div>
-          <div className="service-card">
-            <i className="fas fa-tools service-icon"></i>
-            <h3>IT Consulting</h3>
+        </div>
+
+        <div className="cta-consultation">
+          <h3>Ready to Discuss Your IT Needs?</h3>
+          <p>Let's explore how our expertise can translate into tangible benefits for your business, like increased efficiency, significant cost savings, and robust scalability.</p>
+          <a href="#contact" className="cta-button">Book Your Free 15-Minute Consultation</a>
+        </div>
+      </section>
+
+      {/* Marketing Insights Section */}
+      <section id="marketing-insights" className="about"> {/* Using "about" class for similar styling */}
+        <h2>Grow Your Business with GMTech: Marketing Insights</h2>
+        <div className="about-content"> {/* Using "about-content" for layout consistency */}
+          <div className="about-text"> {/* Using "about-text" for text block styling */}
             <p>
-              Strategic IT planning, system optimization, software implementation, and process automation.
+              Beyond providing top-tier IT solutions, GMTech is invested in your success. Here are some marketing strategies that can help you leverage your technology and services to grow your business:
             </p>
-            <p className="long-tail-keywords">
-              Keywords: IT strategy, system analysis, process automation, software implementation, technical consultation.
-            </p>
-          </div>
-          <div className="service-card">
-            <i className="fas fa-database service-icon"></i>
-            <h3>Database Administration</h3>
+            
+            <h3>Content Marketing: Share Your Expertise</h3>
             <p>
-              Database support (SQL), backup and recovery, and data management solutions.
+              Establish yourself as a thought leader by regularly publishing blog posts or articles addressing common IT challenges and innovative solutions. This not only helps your clients but also boosts your website's SEO, attracting more organic traffic. Consider topics like "5 Cybersecurity Tips for Small Businesses" or "The Benefits of Cloud Migration for SMBs."
             </p>
-            <p className="long-tail-keywords">
-              Keywords: SQL, MSSQL EXPRESS, FOXCOM, database management, backup, disaster recovery.
+
+            <h3>Showcase Successes: Build Trust</h3>
+            <p>
+              Let your work speak for itself. Build trust and credibility by featuring client testimonials or in-depth case studies. Positive feedback from satisfied clients is incredibly powerful. 
+              <br /><em>(Placeholder: Consider adding a dedicated 'Testimonials/Case Studies' subsection or page as you gather client stories.)</em>
+            </p>
+
+            <h3>Local SEO Optimization: Attract Nearby Clients</h3>
+            <p>
+              Ensure local businesses can find you. Optimize your website content and Google My Business (GMB) profile for local search terms. Think "IT support in [Your City/Region]," "cloud solutions [Your Town]," or "small business tech consultant near me." A well-optimized GMB listing with your services, hours, and location is crucial.
+            </p>
+
+            <h3>Targeted Online Advertising: Reach Specific Audiences</h3>
+            <p>
+              For more direct outreach, explore targeted online advertising. Platforms like LinkedIn Ads allow you to reach specific industries or job titles, while Google Ads can capture users actively searching for your services. This can be a cost-effective way to generate leads for specialized IT packages.
             </p>
           </div>
         </div>
@@ -214,6 +284,15 @@ function App() {
       {/* Contact Section */}
       <section id="contact" className="contact">
         <h2>Get in Touch</h2>
+        <p className="contact-intro">
+          Ready to discuss your IT challenges or interested in our <strong>Free 15-Minute Consultation</strong>?
+          <br />
+          Fill out the form below, or use the button to schedule your consultation directly.
+        </p>
+        {/* Greg: Replace # with your booking service URL */}
+        <a href="#contact" className="cta-button cta-button-centered">
+          Book Your Free 15-Min Consultation Now
+        </a>
         <TicketSubmissionForm />
       </section>
 
