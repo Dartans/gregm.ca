@@ -1,46 +1,27 @@
 {
   "name": "gregm.ca",
-  "version": "0.1.0",
+  "version": "2.0.0",
+  "description": "Greg Mueller IT Consulting Portfolio - Vanilla HTML/CSS/JS",
   "private": true,
   "homepage": "http://portfolio.gregm.ca",
-  "dependencies": {
-    "@testing-library/dom": "^10.4.0",
-    "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.2.0",
-    "@testing-library/user-event": "^13.5.0",
-    "firebase": "^11.5.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
-  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "start": "python3 -m http.server 3001",
+    "start-node": "npx http-server -p 3001 .",
+    "build": "echo 'No build step required for vanilla HTML/CSS/JS'",
+    "deploy": "gh-pages -d .",
+    "predeploy": "echo 'Ready to deploy - all files are in root directory'"
   },
   "devDependencies": {
-    "gh-pages": "^6.3.0"
-  }
+    "gh-pages": "^6.3.0",
+    "http-server": "^14.1.1"
+  },
+  "keywords": [
+    "portfolio",
+    "it-consulting",
+    "web-development",
+    "networking",
+    "cloud-solutions"
+  ],
+  "author": "Greg Mueller",
+  "license": "ISC"
 }
