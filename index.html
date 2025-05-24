@@ -39,20 +39,41 @@
 </head>
 <body>
   <div class="container">
+    <!-- Mobile Menu Overlay -->
+    <div class="nav-overlay"></div>
+    
     <!-- Header -->
     <header>
       <div class="logo">
         GM<span class="logo-accent">Tech</span>
       </div>
-      <nav>
+      <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="nav-menu">
         <ul>
           <li><a href="#hero">Home</a></li>
           <li><a href="#about">About Me</a></li>
           <li><a href="#services">Services</a></li>
+          <li><a href="#demos">Demos</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </header>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+      <div class="loading-content">
+        <div class="loading-logo">
+          GM<span class="logo-accent">Tech</span>
+        </div>
+        <div class="loading-spinner">
+          <div class="spinner"></div>
+        </div>
+      </div>
+    </div>
 
     <!-- Hero Section -->
     <section id="hero" class="hero">
@@ -149,12 +170,194 @@
             Keywords: SQL, MSSQL EXPRESS, FOXCOM, database management, backup, disaster recovery.
           </p>
         </div>
+        <div class="service-card">
+          <i class="fas fa-headset service-icon"></i>
+          <h3>IT Support & Maintenance</h3>
+          <p>
+            Ongoing technical support, system maintenance, troubleshooting, and remote assistance for your IT infrastructure.
+          </p>
+          <p class="long-tail-keywords">
+            Keywords: IT support, system maintenance, remote assistance, troubleshooting, help desk, technical support.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Demos Section -->
+    <section id="demos" class="demos">
+      <h2>Live Demos & Portfolio</h2>
+      
+      <!-- Live Demo Websites Subsection -->
+      <div class="subsection-header">
+        <h3>Live Demo Websites</h3>
+        <p>Explore these live websites I've developed and deployed</p>
+      </div>
+      
+      <div class="demos-grid">
+        <div class="demo-card">
+          <div class="demo-visual">
+            <i class="fas fa-store demo-icon"></i>
+          </div>
+          <div class="demo-content">
+            <h3>Hayloft Woodshed - Small Business Site</h3>
+            <p class="demo-description">
+              A clean, professional website for a local woodshed business featuring responsive design, contact forms, and service showcase.
+            </p>
+            <div class="demo-tech">
+              <span class="tech-tag">HTML5</span>
+              <span class="tech-tag">CSS3</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">Responsive Design</span>
+            </div>
+            <div class="demo-results">
+              <div class="result-item">
+                <strong>Live Site</strong>
+                <span><a href="https://hayloft-woodshed.ca" target="_blank">Visit Website</a></span>
+              </div>
+              <div class="result-item">
+                <strong>Mobile-First</strong>
+                <span>Fully Responsive</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="demo-card">
+          <div class="demo-visual">
+            <i class="fas fa-robot demo-icon"></i>
+          </div>
+          <div class="demo-content">
+            <h3>Secretarius - AI Assistant Platform</h3>
+            <p class="demo-description">
+              Developed a modern AI-powered assistant web application with intelligent automation and user-friendly interface design.
+            </p>
+            <div class="demo-tech">
+              <span class="tech-tag">AI/ML</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">Web APIs</span>
+              <span class="tech-tag">Responsive Design</span>
+            </div>
+            <div class="demo-results">
+              <div class="result-item">
+                <strong>Live Demo</strong>
+                <span><a href="https://www.secretarius.app/" target="_blank">View Application</a></span>
+              </div>
+              <div class="result-item">
+                <strong>Modern UI</strong>
+                <span>Mobile-First Design</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Portfolio Projects Subsection -->
+      <div class="subsection-header portfolio-header">
+        <h3>Portfolio Projects</h3>
+        <p>Recent client projects and implementations</p>
+      </div>
+      
+      <div class="portfolio-carousel">
+        <div class="portfolio-card active">
+          <div class="demo-visual">
+            <i class="fas fa-network-wired demo-icon"></i>
+          </div>
+          <div class="demo-content">
+            <h3>Enterprise Network Infrastructure</h3>
+            <p class="demo-description">
+              Complete network redesign for a 200+ employee company, including VLAN segmentation, security implementation, and performance optimization.
+            </p>
+            <div class="demo-tech">
+              <span class="tech-tag">Cisco</span>
+              <span class="tech-tag">VLAN</span>
+              <span class="tech-tag">Firewall</span>
+              <span class="tech-tag">Network Security</span>
+            </div>
+            <div class="demo-results">
+              <div class="result-item">
+                <strong>50%</strong>
+                <span>Network Performance Increase</span>
+              </div>
+              <div class="result-item">
+                <strong>99.9%</strong>
+                <span>Uptime Achieved</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="portfolio-card">
+          <div class="demo-visual">
+            <i class="fas fa-cloud demo-icon"></i>
+          </div>
+          <div class="demo-content">
+            <h3>Azure Cloud Migration</h3>
+            <p class="demo-description">
+              Migrated on-premises infrastructure to Azure cloud, implementing hybrid connectivity and disaster recovery solutions.
+            </p>
+            <div class="demo-tech">
+              <span class="tech-tag">Azure</span>
+              <span class="tech-tag">VPN</span>
+              <span class="tech-tag">Backup</span>
+              <span class="tech-tag">VDI</span>
+            </div>
+            <div class="demo-results">
+              <div class="result-item">
+                <strong>40%</strong>
+                <span>Cost Reduction</span>
+              </div>
+              <div class="result-item">
+                <strong>24/7</strong>
+                <span>Remote Access</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="portfolio-card">
+          <div class="demo-visual">
+            <i class="fas fa-code demo-icon"></i>
+          </div>
+          <div class="demo-content">
+            <h3>Custom Web Application</h3>
+            <p class="demo-description">
+              Built a real-time inventory management system with automated reporting and mobile-responsive design.
+            </p>
+            <div class="demo-tech">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">SQL Server</span>
+              <span class="tech-tag">API</span>
+            </div>
+            <div class="demo-results">
+              <div class="result-item">
+                <strong>60%</strong>
+                <span>Time Savings</span>
+              </div>
+              <div class="result-item">
+                <strong>Real-time</strong>
+                <span>Data Updates</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="portfolio-nav">
+        <button class="nav-dot active" data-slide="0"></button>
+        <button class="nav-dot" data-slide="1"></button>
+        <button class="nav-dot" data-slide="2"></button>
       </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
       <h2>Get in Touch</h2>
+      
+      <!-- Google Calendar Appointment Scheduling begin -->
+      <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ06WqKayYfEwWTXnpUkNFaMOEorvYQIFFFDJ7zr1uzbWcM_EJnmHhAOvFtKlOi4AB1ySwJ1tplu?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
+      <!-- end Google Calendar Appointment Scheduling -->
+      
       <form id="ticketForm" class="ticket-form">
         <div id="submissionMessage" class="submission-message" style="display: none;"></div>
         <div class="form-group">
