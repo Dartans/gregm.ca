@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ratio Lock</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        input[type="number"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            width: 100px;
+            text-align: center;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .locked-button {
+            background-color: #dc3545; /* Red for locked */
+        }
+        .locked-button:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="number" id="number1" value="10">
+        <button id="lockRatioBtn">Lock Ratio</button>
+        <input type="number" id="number2" value="20">
+    </div>
+
+    <script>
+        const number1Input = document.getElementById('number1');
+        const number2Input = document.getElementById('number2');
+        const lockRatioBtn = document.getElementById('lockRatioBtn');
+
+        let isRatioLocked = false;
+        let currentRatio = 0; // ratio = number2 / number1
+
+        // Function to update the ratio when values change and ratio is locked
+        function updateLockedRatio(changedInputId) {
+            if (!isRatioLocked) return;
+
+            if (changedInputId === 'number1') {
+                number2Input.value = (parseFloat(number1Input.value) * currentRatio).toFixed(2);
+            } else if (changedInputId === 'number2') {
+                number1Input.value = (parseFloat(number2Input.value) / currentRatio).toFixed(2);
+            }
+        }
+
+        // Event listener for locking/unlocking the ratio
+        lockRatioBtn.addEventListener('click', () => {
+            isRatioLocked = !isRatioLocked;
+            if (isRatioLocked) {
+                // Calculate the ratio when locking
+                const num1 = parseFloat(number1Input.value);
+                const num2 = parseFloat(number2Input.value);
+                if (num1 !== 0) {
+                    currentRatio = num2 / num1;
+                } else {
+                    currentRatio = 0; // Handle division by zero
+                }
+                lockRatioBtn.textContent = 'Unlock Ratio';
+                lockRatioBtn.classList.add('locked-button');
+                number1Input.removeEventListener('input', handleNumber2Change); // Remove listener from num1 for individual changes
+                number2Input.removeEventListener('input', handleNumber1Change); // Remove listener from num2 for individual changes
+                number1Input.addEventListener('input', handleNumber1ChangeLocked);
+                number2Input.addEventListener('input', handleNumber2ChangeLocked);
+
+            } else {
+                lockRatioBtn.textContent = 'Lock Ratio';
+                lockRatioBtn.classList.remove('locked-button');
+                number1Input.removeEventListener('input', handleNumber1ChangeLocked);
+                number2Input.removeEventListener('input', handleNumber2ChangeLocked);
+                number1Input.addEventListener('input', handleNumber1Change);
+                number2Input.addEventListener('input', handleNumber2Change);
+            }
+            console.log('Ratio locked:', isRatioLocked);
+            console.log('Current Ratio:', currentRatio);
+        });
+
+        // Event handlers for individual input adjustments (when unlocked)
+        function handleNumber1Change() {
+            // No action needed for the other box when unlocked
+        }
+
+        function handleNumber2Change() {
+            // No action needed for the other box when unlocked
+        }
+
+        // Event handlers for input adjustments when locked
+        function handleNumber1ChangeLocked() {
+            updateLockedRatio('number1');
+        }
+
+        function handleNumber2ChangeLocked() {
+            updateLockedRatio('number2');
+        }
+
+        // Initial setup: attach listeners for individual adjustments
+        number1Input.addEventListener('input', handleNumber1Change);
+        number2Input.addEventListener('input', handleNumber2Change);
+    </script>
+</body>
+</html>
